@@ -1,4 +1,4 @@
-# Trip Planner
+# React / Express / MySQL environment setup
 
 ## Setup development environment
 
@@ -18,25 +18,25 @@ npm install
 * build Docker container
 
 ```bash
- docker build -t bogna/trip -f setup/Dockerfile .
+ docker build -t <image_name> -f setup/Dockerfile .
 ```
 
 * run MySQL Docker container
 
 ```bash
-docker run --name tripDB -p 3306:3306 -d bogna/trip
+docker run --name <container_name> -p 3306:3306 -d <image_name>
 ```
 
 * in order to resume stopped container run
 
 ```bash
-docker start tripDB
+docker start <container_name>
 ```
 
 * in order to execute command in running container run (credentials to development DB are stored inside setup/Dockerfile)
 
 ```bash
-docker exec -it tripDB mysql -uvoyager -p
+docker exec -it <db> mysql -u<user> -p
 ```
 
 #### Migrations
